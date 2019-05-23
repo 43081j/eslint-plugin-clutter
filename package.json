@@ -1,0 +1,19 @@
+{
+  "name": "notneeded",
+  "version": "0.0.1",
+  "description": "Detects redundant dependencies which should be avoided and replaced with native functionality",
+  "main": "lib/cli.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/43081j/notneeded.git"
+  },
+  "author": "James Garbutt (https://github.com/43081j)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/43081j/notneeded/issues"
+  },
+  "homepage": "https://github.com/43081j/notneeded#readme"
+}
