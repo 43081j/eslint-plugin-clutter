@@ -36,6 +36,8 @@ class CLI extends React.Component<{}, CLIState> {
     }
 
     if (this.state.badDependencies.size > 0) {
+      process.exitCode = 1;
+
       const items = [...this.state.badDependencies]
         .map((dep) => {
           const depMessage = packages.get(dep);
