@@ -1,10 +1,9 @@
 import * as React from 'react';
 import {render, Color, Text, Box} from 'ink';
 import {scan} from './main';
-import {packages} from './packages';
 
 interface CLIState {
-  badDependencies: Set<string>;
+  badDependencies: Record<string, string>;
   err?: string;
 }
 
@@ -12,7 +11,7 @@ class CLI extends React.Component<{}, CLIState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      badDependencies: new Set()
+      badDependencies: {}
     };
   }
 
@@ -35,12 +34,14 @@ class CLI extends React.Component<{}, CLIState> {
       );
     }
 
-    if (this.state.badDependencies.size > 0) {
+    const keys = Object.keys(this.state.badDependencies);
+
+    if (keys.length > 0) {
       process.exitCode = 1;
 
-      const items = [...this.state.badDependencies]
+      const items = keys
         .map((dep) => {
-          const depMessage = packages.get(dep);
+          const depMessage = this.state.badDependencies[dep];
           return (
             <Box key={dep}>
               <Color bgKeyword="red" white>{dep}</Color>
