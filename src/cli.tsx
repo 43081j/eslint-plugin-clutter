@@ -45,14 +45,18 @@ class CLI extends React.Component<{}, CLIState> {
           return (
             <Box key={dep}>
               <Color bgKeyword="red" white>{dep}</Color>
-              <Text>{depMessage}</Text>
+              <Box marginLeft={1}>
+                <Color bold white>{depMessage}</Color>
+              </Box>
             </Box>
           );
         })
 
       return (
         <Box flexDirection="column">
-          <Color red>Unnecessary dependencies detected:</Color>
+          <Box marginBottom={1}>
+            <Color red>{keys.length} unnecessary dependencies detected:</Color>
+          </Box>
           {items}
         </Box>
       );
