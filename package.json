@@ -4,7 +4,14 @@
   "description": "Detects redundant dependencies which should be avoided and replaced with native functionality",
   "main": "lib/cli.js",
   "scripts": {
-    "test": "mocha"
+    "clean": "rimraf ./lib",
+    "lint": "eslint \"src/**/*.ts\"",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "test": "mocha \"lib/test/**/*_test.js\"",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint && npm run test"
   },
   "repository": {
     "type": "git",
@@ -15,5 +22,19 @@
   "bugs": {
     "url": "https://github.com/43081j/notneeded/issues"
   },
-  "homepage": "https://github.com/43081j/notneeded#readme"
+  "homepage": "https://github.com/43081j/notneeded#readme",
+  "devDependencies": {
+    "@types/node": "^12.0.2",
+    "@types/react": "^16.8.18",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
+    "prettier": "^1.17.1",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "ink": "^2.2.0",
+    "react": "^16.8.6"
+  }
 }
