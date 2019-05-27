@@ -44,18 +44,22 @@ class CLI extends React.Component<{}, CLIState> {
           const depMessage = this.state.badDependencies[dep];
           return (
             <Box key={dep}>
-              <Color bgKeyword="red" white>{dep}</Color>
-              <Box marginLeft={1}>
+              <Box marginRight={1}>
+                <Color bgRed white>{dep}</Color>
+              </Box>
+              <Box>
                 <Color bold white>{depMessage}</Color>
               </Box>
             </Box>
           );
         })
 
+      const pluralised = keys.length > 1 ? 'dependencies' : 'dependency';
+
       return (
         <Box flexDirection="column">
           <Box marginBottom={1}>
-            <Color red>{keys.length} unnecessary dependencies detected:</Color>
+            <Color red>{keys.length} unnecessary {pluralised} detected:</Color>
           </Box>
           {items}
         </Box>
