@@ -43,13 +43,14 @@ class CLI extends React.Component<{}, CLIState> {
         .map((dep) => {
           const depMessage = this.state.badDependencies[dep];
           return (
-            <Box key={dep}>
+            <Box key={dep} marginBottom={1}>
               <Box marginRight={1}>
-                <Color bgRed white>{dep}</Color>
+                <Color bgRed white>FAIL</Color>
               </Box>
-              <Box>
-                <Color bold white>{depMessage}</Color>
+              <Box marginRight={1}>
+                <Color dim white>{dep}</Color>
               </Box>
+              <Box>{depMessage}</Box>
             </Box>
           );
         })
@@ -58,10 +59,10 @@ class CLI extends React.Component<{}, CLIState> {
 
       return (
         <Box flexDirection="column">
-          <Box marginBottom={1}>
+          {items}
+          <Box>
             <Color red>{keys.length} unnecessary {pluralised} detected:</Color>
           </Box>
-          {items}
         </Box>
       );
     }
