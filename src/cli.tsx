@@ -50,6 +50,7 @@ class CLI extends React.Component<{}, CLIState> {
               <Box marginRight={1}>
                 <Color dim white>{dep}</Color>
               </Box>
+              <Box marginRight={1}>&raquo;</Box>
               <Box>{depMessage}</Box>
             </Box>
           );
@@ -61,7 +62,7 @@ class CLI extends React.Component<{}, CLIState> {
         <Box flexDirection="column">
           {items}
           <Box>
-            <Color red>{keys.length} unnecessary {pluralised} detected:</Color>
+            <Color red>{keys.length} unnecessary {pluralised} detected.</Color>
           </Box>
         </Box>
       );
