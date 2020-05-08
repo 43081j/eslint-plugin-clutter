@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "jsx": "react",
-    "lib": ["es2015"],
     "module": "commonjs",
     "declaration": true,
     "outDir": "./lib",
@@ -15,5 +13,5 @@
     "noFallthroughCasesInSwitch": true,
     "alwaysStrict": true
   },
-  "include": ["src/**/*.tsx"]
+  "include": ["src/**/*.ts"]
 }

@@ -1,8 +1,12 @@
 {
   "name": "notneeded",
   "version": "0.0.1",
-  "description": "Detects redundant dependencies which should be avoided and replaced with native functionality",
-  "main": "lib/cli.js",
+  "description": "ESLint plugin for detecting redundant and unnecessary dependencies.",
+  "main": "lib/index.js",
+  "files": [
+    "lib/!(test)",
+    "docs/"
+  ],
   "scripts": {
     "clean": "rimraf ./lib",
     "lint": "eslint \"src/**/*.ts\"",
@@ -17,26 +21,35 @@
     "type": "git",
     "url": "git+https://github.com/43081j/notneeded.git"
   },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "webcomponents",
+    "wc"
+  ],
   "author": "James Garbutt (https://github.com/43081j)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/43081j/notneeded/issues"
   },
   "homepage": "https://github.com/43081j/notneeded#readme",
-  "devDependencies": {
-    "@types/eslint": "^4.16.6",
-    "@types/estree": "0.0.39",
-    "@types/node": "^12.0.2",
-    "@types/react": "^16.8.18",
-    "@typescript-eslint/eslint-plugin": "^1.9.0",
-    "@typescript-eslint/parser": "^1.9.0",
-    "eslint": "^5.16.0",
-    "eslint-config-google": "^0.13.0",
-    "prettier": "^1.17.1",
-    "typescript": "^3.4.5"
+  "peerDependencies": {
+    "eslint": ">= 5"
   },
-  "dependencies": {
-    "ink": "^2.2.0",
-    "react": "^16.8.6"
-  }
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/eslint": "^6.8.0",
+    "@types/estree": "0.0.44",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.5",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "mocha": "^7.1.2",
+    "prettier": "^2.0.5",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {}
 }

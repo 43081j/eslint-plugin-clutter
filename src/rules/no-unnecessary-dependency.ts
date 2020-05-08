@@ -1,17 +1,18 @@
 import {Rule} from 'eslint';
 import * as ESTree from 'estree';
-import {scanPackages} from './scanner';
+import {packages} from '../messages';
 
-const rule: Rule.RuleModule = {
+export const noUnnecessaryDependency: Rule.RuleModule = {
   meta: {
     docs: {
-      description: 'Disallows use of unnecessary packages',
+      description: 'Disallows use of unnecessary dependencies.',
       url:
         'https://github.com/43081j/notneeded/README.md'
     },
     messages: {
       unnecessary:
-        'Package is unnecessary and should not be depended on: {{err}}'
+        'Package "{{package}}" is unnecessary and should not be' +
+          ' depended on: {{message}}'
     }
   },
 
@@ -22,14 +23,12 @@ const rule: Rule.RuleModule = {
           node.source.type === 'Literal' &&
           typeof node.source.value === 'string') {
           const name = node.source.value;
-          const result = await scanPackages([name]);
-          const keys = Object.keys(result);
-
-          if (keys.length > 0) {
+          const msg = packages[name.toLowerCase()];
+          if (msg) {
             context.report({
               node: node,
               messageId: 'unnecessary',
-              data: {err: result[name]}
+              data: {package: name, message: msg}
             });
           }
         }
@@ -37,5 +36,3 @@ const rule: Rule.RuleModule = {
     };
   }
 };
-
-export default rule;
