@@ -25,8 +25,10 @@ export const noUnnecessaryDependency: Rule.RuleModule = {
           node.arguments.length === 1
         ) {
           const firstArg = node.arguments[0];
-          if (firstArg.type === 'Literal' &&
-            typeof firstArg.value === 'string') {
+          if (
+            firstArg.type === 'Literal' &&
+            typeof firstArg.value === 'string'
+          ) {
             const name = firstArg.value;
             const msg = packages[name.toLowerCase()];
             if (msg) {

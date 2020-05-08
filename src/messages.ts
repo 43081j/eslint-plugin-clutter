@@ -57,5 +57,6 @@ export const packages: Record<string, string> = {
   'lodash.padstart': 'Use `String.prototype.padStart` instead.',
   'lodash.findindex': 'Use `Array.prototype.findIndex` instead.',
   'lodash.find': 'Use `Array.prototype.find` instead.',
-  'lodash.keys': 'Use `Object.keys` instead.'
+  'lodash.keys': 'Use `Object.keys` instead.',
+  'define-properties': 'Use `Object.defineProperties` instead.'
 };

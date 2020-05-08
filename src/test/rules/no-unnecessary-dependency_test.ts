@@ -11,13 +11,13 @@ const ruleTester = new RuleTester({
 ruleTester.run('no-unnecessary-dependency', noUnnecessaryDependency, {
   valid: [
     {
-      code: `import * as fs from 'fs';`,
+      code: `import * as fs from 'fs';`
     },
     {
-      code: `import {readFileSync} from 'fs';`,
+      code: `import {readFileSync} from 'fs';`
     },
     {
-      code: `const fs = require('fs');`,
+      code: `const fs = require('fs');`
     }
   ],
 
