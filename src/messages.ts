@@ -58,5 +58,6 @@ export const packages: Record<string, string> = {
   'lodash.findindex': 'Use `Array.prototype.findIndex` instead.',
   'lodash.find': 'Use `Array.prototype.find` instead.',
   'lodash.keys': 'Use `Object.keys` instead.',
-  'define-properties': 'Use `Object.defineProperties` instead.'
+  'define-properties': 'Use `Object.defineProperties` instead.',
+  'is-buffer': 'Use `Buffer.isBuffer` instead, or `obj.constructor?.isBuffer(obj)` to avoid bundling Buffer.',
 };
