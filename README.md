@@ -7,7 +7,7 @@ The JavaScript ecosystem is filled with _clutter_:
 * Micro-packages - one-liners, often with native equivalents you should
 use instead
 * Obsolete packages - packages made obsolete by a better, newer package. NPM
-should take care of this but not all authors remember to mark their 
+should take care of this but not all authors remember to mark their
 packages as obsolete
 * Obsolete packages (native replacements) - packages no longer needed because
 the platform (e.g. browsers, node, etc.) support the functionality out
