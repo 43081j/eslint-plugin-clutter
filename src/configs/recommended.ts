@@ -1,6 +1,5 @@
 const config = {
-  rules: {
-  }
+  rules: {}
 };
 
 export default config;
