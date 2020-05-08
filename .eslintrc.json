@@ -17,7 +17,8 @@
       "error",
       "single",
       {
-        "avoidEscape": true
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
       }
     ],
     "@typescript-eslint/class-name-casing": "error",

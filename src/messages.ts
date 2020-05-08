@@ -59,5 +59,6 @@ export const packages: Record<string, string> = {
   'lodash.find': 'Use `Array.prototype.find` instead.',
   'lodash.keys': 'Use `Object.keys` instead.',
   'define-properties': 'Use `Object.defineProperties` instead.',
-  'is-buffer': 'Use `Buffer.isBuffer` instead, or `obj.constructor?.isBuffer(obj)` to avoid bundling Buffer.',
+  'is-buffer':
+    'Use `Buffer.isBuffer` instead, or `obj.constructor?.isBuffer(obj)` to avoid bundling Buffer.'
 };
