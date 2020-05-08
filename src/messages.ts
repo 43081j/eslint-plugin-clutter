@@ -7,8 +7,6 @@ export const packages: Record<string, string> = {
     'Use Object.assign or the spread operator (i.e. `{...foo, ...bar}`) instead to merge and extend objects.',
   'qs':
     "Use URLSearchParams instead to parse query strings (e.g. `new URLSearchParams('x=5')`) and to build them.",
-  'qs':
-    "Use URLSearchParams instead to parse query strings (e.g. `new URLSearchParams('x=5')`) and to build them.",
   'query-string':
     "Use URLSearchParams instead to parse query strings (e.g. `new URLSearchParams('x=5')`) and to build them.",
   'querystring':
