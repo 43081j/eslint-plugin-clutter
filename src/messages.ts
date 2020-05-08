@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 export const packages: Record<string, string> = {
   'q': 'Use native promise support instead, as it is now widely supported in all modern platforms.',
   'extend': 'Use Object.assign or the spread operator (i.e. `{...foo, ...bar}`) instead to merge and extend objects.',
