@@ -18,7 +18,26 @@ export const noUnnecessaryDependency: Rule.RuleModule = {
 
   create(context): Rule.RuleListener {
     return {
-      'ImportDeclaration': async (node: ESTree.Node): Promise<void> => {
+      'CallExpression': (node: ESTree.Node): void => {
+        if (node.type === 'CallExpression' &&
+          node.callee.type === 'Identifier' &&
+          node.callee.name === 'require' &&
+          node.arguments.length === 1) {
+          const firstArg = node.arguments[0];
+          if (firstArg.type === 'Literal') {
+            const name = firstArg.value;
+            const msg = packages[name.toLowerCase()];
+            if (msg) {
+              context.report({
+                node: node,
+                messageId: 'unnecessary',
+                data: {package: name, message: msg}
+              });
+            }
+          }
+        }
+      },
+      'ImportDeclaration': (node: ESTree.Node): void => {
         if (node.type === 'ImportDeclaration' &&
           node.source.type === 'Literal' &&
           typeof node.source.value === 'string') {

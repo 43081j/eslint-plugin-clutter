@@ -21,5 +21,17 @@ export const packages: Record<string, string> = {
   'is-npm': 'Use `process.env.npm_config_user_agent?.startsWith(\'npm\')` rather than introducing a micro-dependency.',
   'invert-kv': 'Use your own function rather than a micro-dependency, e.g. `Object.fromEntries(Object.entries(obj).map(e => e.reverse()))`',
   'clone-regexp': 'Use the RegExp constructor instead, e.g.: `new RegExp(otherRegExp)`.',
-  'split-lines': 'Use `String.prototype.split` rather than introducing a micro-dependency.'
+  'split-lines': 'Use `String.prototype.split` rather than introducing a micro-dependency.',
+  'lodash.assign': 'Use Object.assign or the spread operator (i.e. `{...foo, ...bar}`) instead to merge and extend objects.',
+  'lodash.defaults': 'Use Object.assign or the spread operator (i.e. `{...foo, ...bar}`) instead to merge and extend objects.',
+  'lodash.tolower': 'Use `String.prototype.toLowerCase` instead.',
+  'lodash.toupper': 'Use `String.prototype.toUpperCase` instead.',
+  'lodash.isnan': 'Use `Number.isNaN` to check for NaN, and `isNaN` to check if a value is not a number.',
+  'lodash.endswith': 'Use `String.prototype.endsWith` instead.',
+  'lodash.startswith': 'Use `String.prototype.startsWith` instead.',
+  'lodash.padend': 'Use `String.prototype.padEnd` instead.',
+  'lodash.padstart': 'Use `String.prototype.padStart` instead.',
+  'lodash.findindex': 'Use `Array.prototype.findIndex` instead.',
+  'lodash.find': 'Use `Array.prototype.find` instead.',
+  'lodash.keys': 'Use `Object.keys` instead.'
 };
