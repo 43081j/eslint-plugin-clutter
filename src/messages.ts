@@ -60,5 +60,21 @@ export const packages: Record<string, string> = {
   'lodash.keys': 'Use `Object.keys` instead.',
   'define-properties': 'Use `Object.defineProperties` instead.',
   'is-buffer':
-    'Use `Buffer.isBuffer` instead, or `obj.constructor?.isBuffer(obj)` to avoid bundling Buffer.'
+    'Use `Buffer.isBuffer` instead, or `obj.constructor?.isBuffer(obj)` to avoid bundling Buffer.',
+  'is-windows': 'Use `process.platform === \'win32\'` instead.',
+  'is-dotfile': 'Use `startsWith(\'.\')` on the base name of the file or folder instead.',
+  'is-whitespace': 'Use `str.trim() === \'\'` or a RegExp instead.',
+  'array-first': 'Use `Array.prototype.slice` instead.',
+  'array-last': 'Use `Array.prototype.slice` instead.',
+  'array-rest': 'Use `Array.prototype.slice` instead.',
+  'array-initial': 'Use `Array.prototype.slice` instead.',
+  'filter-array': 'Use `Array.prototype.filter` instead.',
+  'array-every': 'Use `Array.prototype.every` instead.',
+  'index-of': 'Use `Array.prototype.indexOf` instead.',
+  'last-index-of': 'Use `Array.prototype.lastIndexOf` instead.',
+  'array-pull': 'Use `Array.prototype.splice` instead.',
+  'pad-left': 'Use `String.prototype.padStart` instead, e.g. `"foo".padStart(6)`.',
+  'is-primitive': 'Type-check the value manually, i.e. `typeof val !== \'object\' && typeof val !== \'function\'`',
+  'is-odd': 'Use `(n % 2) === 1` instead.',
+  'is-even': 'Use `(n % 2) === 0` instead.'
 };
