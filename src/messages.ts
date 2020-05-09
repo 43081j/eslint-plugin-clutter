@@ -76,5 +76,6 @@ export const packages: Record<string, string> = {
   'pad-left': 'Use `String.prototype.padStart` instead, e.g. `"foo".padStart(6)`.',
   'is-primitive': 'Type-check the value manually, i.e. `typeof val !== \'object\' && typeof val !== \'function\'`',
   'is-odd': 'Use `(n % 2) === 1` instead.',
-  'is-even': 'Use `(n % 2) === 0` instead.'
+  'is-even': 'Use `(n % 2) === 0` instead.',
+  'is-string': 'Use `typeof foo === \'string\'` instead.'
 };
